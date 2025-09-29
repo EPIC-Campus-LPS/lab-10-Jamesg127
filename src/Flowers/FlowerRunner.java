@@ -19,7 +19,7 @@ public class FlowerRunner {
   
         System.out.println("\nExample 2");  
         FlowerBed flowerBed2 = new FlowerBed(3);  
-        //System.out.println(flowerBed2); // FlowerBed{null, null, null}  
+        System.out.println(flowerBed2); // FlowerBed{null, null, null}  
         Flower flower2  = new Flower("Rose");  
         System.out.println(flowerBed2.plantFlower(flower2)); //0  
         System.out.println(flowerBed2); // FlowerBed{Flower{Rose}, null, null}  

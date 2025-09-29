@@ -6,7 +6,7 @@ public class FlowerBed {
 		bed = b;
 	}
 	public FlowerBed(int number) {
-		Flower[] bed = new Flower[number];
+		bed = new Flower[number];
 	}
 	public Flower[] getBed() {
 		return bed;
@@ -28,20 +28,23 @@ public class FlowerBed {
 	}
 	public void flipBed() {
 		Flower temp;
-		for(int i = 0; i < bed.length / 2; i++) {
-			temp = bed[i];
-			bed[i] = bed[bed.length - i];
-			bed[bed.length - 1] = temp; 
+		for(int i = 0; i < (int)bed.length / 2; i++) {
+			if(bed.length > 0) {
+				temp = bed[i];
+				bed[i] = bed[bed.length - i -1];
+				bed[bed.length - i -1] = temp; 
+			}
+			
 		}
 	}
 	public String toString() {
 		String flowerBedString = "FlowerBed{ ";
-		for (int i = 0; i < bed.length; i++) {
-			if(bed[i] == null) {
+		for (int j = 0; j < bed.length; j++) {
+			if(bed[j] == null) {
 				flowerBedString += " null, ";
 			}
 			else {
-				flowerBedString += "{ flower" + bed[i].getSpecies() + " },";
+				flowerBedString += "{ flower" + bed[j].getSpecies() + " },";
 			}
 			
 		}
